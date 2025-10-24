@@ -156,10 +156,14 @@ Seu arquivo deverá estar assim:
   "include": ["src", "src/index.ts"]
 }
 ```
-
 > No VS Code, se aparecerem erros de tipos do Node, use **Ctrl+Shift+P → TypeScript: Restart TS Server**.
 
 <br>
+
+## 🎲 Banco de Dados
+
+<img src="../bancodados.jpg" alt="Logo" height="200">
+<img src="https://github.com/gabrielelarena/Aluno-nota/blob/main/bancodados.jpg">
 
 ## ▶️ Como executar
 
