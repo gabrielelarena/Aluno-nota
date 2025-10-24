@@ -1,6 +1,5 @@
 <div align="center">
 
-  <img src="./pizza.png" alt="Logo" height="200">
   <h1 align="center"><strong>SISTEMA PARA CALCULAR MÉDIA DE ALUNOS</strong></h1>
   <p align="center">
 	 Este é um projeto completo desenvolvido em TypeScript + Banco de Dados. <br>
