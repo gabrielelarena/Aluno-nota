@@ -1,3 +1,9 @@
+/*Nome: Julia Bores RA: 2508413
+Nome:
+Nome:
+Nome:
+*/
+
 import readline from "readline";
 import { pool } from "./db";
 import { Aluno } from "./types";
