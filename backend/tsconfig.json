@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    // Caminhos dos arquivos
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    // Ambiente Node.js
+    "target": "ES2020",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "types": ["node"],
+
+    // Saídas e mapas
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    // Regras de tipagem
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Compatibilidade e performance
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+  },
+  "include": ["src", "src/index.ts"]
+}
