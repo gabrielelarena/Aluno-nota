@@ -205,10 +205,9 @@ rm -f csv/*.csv
 ## ⌨ Autores
 
 ```
-- Gabriele Larena
-- João Wagner Bonfim
-- Julia Borges
-- Karine Silva
-- Maria Fernanda Venda
+- Gabriele Larena - 2508761
+- João Wagner Bonfim - 2508282
+- Julia Borges - 2508413
+- Maria Fernanda Venda - 2502731
 ```
 <br>
