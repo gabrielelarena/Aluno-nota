@@ -162,8 +162,27 @@ Seu arquivo deverá estar assim:
 
 ## 🎲 Banco de Dados
 
-<img src="../bancodados.jpg" alt="Logo" height="200">
-<img src="https://github.com/gabrielelarena/Aluno-nota/blob/main/bancodados.jpg">
+> • Após criar um Container no Docker, abra o PgAdmin. <br>
+> • Siga o passo a passo indicado para criar um Banco de Dados, mas lembre de criar de acordo com a suas informações: https://www.eduardopopovici.com/2025/09/como-montar-um-conteiner-com-postgre.html <br>
+> • Quando chegar na parte **CREATE TABLE** da instrução, substitua por isso:
+
+```postgres
+CREATE TABLE IF NOT EXISTS pessoas (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    idade INT NOT NULL
+);
+
+ALTER TABLE pessoas ADD COLUMN IF NOT EXISTS serie INT;
+
+ALTER TABLE pessoas ADD COLUMN IF NOT EXISTS media_matematica DECIMAL(5,2);
+ALTER TABLE pessoas ADD COLUMN IF NOT EXISTS media_historia DECIMAL(5,2);
+ALTER TABLE pessoas ADD COLUMN IF NOT EXISTS media_geografia DECIMAL(5,2);
+
+SELECT * FROM pessoas;
+```
+
+<br>
 
 ## ▶️ Como executar
 
