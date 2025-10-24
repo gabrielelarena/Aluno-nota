@@ -1,9 +1,9 @@
 <div align="center">
 
   <img src="./pizza.png" alt="Logo" height="200">
-  <h1 align="center"><strong>SISTEMA DA PIZZARIA PARMA</strong></h1>
+  <h1 align="center"><strong>SISTEMA PARA CALCULAR MÉDIA DE ALUNOS</strong></h1>
   <p align="center">
-	 Este é um projeto completo de um site de pizzaria desenvolvido em TypeScript + Node.js. <br> Aplicativo criado para gerenciar Entrada, Armazenamento, Saída e Consulta pelos dados do pedido.
+	 Este é um projeto completo desenvolvido em TypeScript + Banco de Dados. <br>
   </p>
 
 </div>
@@ -12,9 +12,9 @@
 
 ## :computer: Tecnologias
 
-Este projeto foi desenvolvido com as seguintes linguagens: 
+Este projeto foi desenvolvido com as seguintes ferramentas: 
 <br><br>
-[![My Skills](https://skillicons.dev/icons?i=typescript,nodejs&theme=dark)](https://skillicons.dev) 
+[![My Skills](https://skillicons.dev/icons?i=typescript,docker,postgres&theme=dark)](https://skillicons.dev) 
 
 </div>
 
@@ -23,35 +23,28 @@ Este projeto foi desenvolvido com as seguintes linguagens:
 ### 📄 Arquivos 
 
 - package.json - Gerencia as dependências e scripts do projeto.
+- package-lock.json - Garante que os pacotes sejam sempre os mesmos.
 - tsconfig.json - Configurações do TypeScript.
-- inicio.ts - Código de base e menu.
-- cardapio.ts - Armazena os itens do Cardápio.
-- pedido.ts - Definição de tipos para a estruturação de dados.
-- cadastroService.ts - Cadastro de novos clientes
-- pedidoService.ts - Base do serviço de pedidos.
-- fileUtils.ts - Utilitário de leitura e escrita em CSV.
-- inputUtils.ts - Utilitário de entrada de dados pelo terminal.
-- validacoes.ts -  Valida as informações inseridas. 
-
+- .env - Usado para armazenar a URL de Conexão com Banco de Dados.
+- alunos.ts - Recebe as notas dos alunos, calcula a média e armazena no Banco de Dados.
+- index.ts - Lê os valores inseridos e avisa se algo não estiver correto.
+- db.ts - Lê a URL do arquivo .env e retorna no console se a conexão com o banco é estabelecida.
+- types.ts - Define a interface Aluno, que descreve a estrutura dos dados de um aluno (nome, idade, série e notas).
+  
 <br>
 
 ## ⚙️ Recursos 
 
-* **Entrada**: Nome Completo, CPF, Telefone, Endereço, Sabores de Pizza, Bebidas, Modo de entrega, Forma de Pagamento.
-* **Armazenamento**: `csv/entradas.csv`, `csv/pedidos.csv`
-* **Saída**: Preço, Quantidade, Produtos escolhidos. 
-* **Consulta por CPF**: Verifica histórico de pedidos realizados com esse CPF. 
-* **Consulta Pizza Mais Pedida**: Verifica qual sabor de pizza saiu mais no dia/mês/ano.
-* **Cadastro de Clientes**: Registra, altera, consulta e exclui clientes.
-* **Cadastro de Produtos**: Gerencia produtos.
-* **Emissão de Comprovante**: Gerar comprovante de compra para cada pedido.
+* **Entrada**: Nome, Idade, Série e Notas: Matemática, História, Geografia.
+* **Armazenamento**: Nome, Idade, Série e Média de cada matéria.
+* **Saída**: Retorna se a Conexão foi concluída ou não.
 
 <br>
 
 ## 📁 Estrutura de pastas
 
 ```
-Back-End/
+backend/
 ├─ dist/          # arquivos .js gerados pelo TypeScript
     ├─ data # código do cardápio .js
 	├─ models # estruturação de dados .js
@@ -68,13 +61,6 @@ Back-End/
 ├─ package-lock.json
 └─ tsconfig.json
 ```
-
-<br>
-
-### 🗃 Arquivos CSV gerados
-
-* `csv/cadastro.csv`  → `id, nome, cpf, telefone, endereco, historicoPedidos`
-* `csv/pedidos.csv`   → `cliente.nome, cliente.cpf, cliente.telefone, cliente.endereco, pedido.id, pedido.data, item.nome, item.quantidade, item.preco, pedido.total`
 
 <br> 
 
@@ -187,18 +173,6 @@ npm run build && npm start
 * **Valor**: Deve ser um número decimal válido (exemplo: 12.5).
 * **Endereço**: Campo obrigatório, não podendo estar vazio.
 * **Pedido**: O valor do pedido deve ser calculado pela expressão `p.item.preco × p.quantidade`, com resultado formatado em 2 casas decimais.
-
-<br>
-
-## 🧹 Limpeza / Reset
-
-Para reiniciar os dados, apague os CSVs dentro de `csv/` (eles serão recriados com cabeçalho na próxima execução):
-
-```bash
-rm -f csv/*.csv 
-```
-
-*(No Windows, apague manualmente ou use `del` no PowerShell.)*
 
 <br>
 
