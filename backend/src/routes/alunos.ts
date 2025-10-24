@@ -1,6 +1,5 @@
 import { Router, Request, Response } from "express";
 import { pool } from "../db";
-//testando commit
 const router = Router();
 
 router.post("/", async (req: Request, res: Response) => {
