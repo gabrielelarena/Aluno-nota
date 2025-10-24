@@ -45,16 +45,9 @@ Este projeto foi desenvolvido com as seguintes ferramentas:
 ```
 backend/
 ├─ dist/          # arquivos .js gerados pelo TypeScript
-    ├─ data # código do cardápio .js
-	├─ models # estruturação de dados .js
-	├─ services # base de cadastros .js
-	├─ utils # utilitários .js
-├─ src/           # código-fonte .ts (ex.: ts/index.ts)
-    ├─ data # código do cardápio .ts
-	├─ models # estruturação de dados .ts
-	├─ services # base de cadastros .ts
-	├─ utils # utilitários .ts
-├─ csv/           # base de dados em CSV
+    ├─ routes # guarda o arquivo (após a transpilaçâo) que armazena a url de conexão.
+├─ src/           # código-fonte .ts (ex.: ts/index.ts) e conexões do banco.
+    ├─ routes # guarda o arquivo que armazena a url de conexão.
 ├─ node_modules/  # armazena as dependências externas
 ├─ package.json
 ├─ package-lock.json
@@ -66,8 +59,11 @@ backend/
 ## 🔧 Pré-requisitos
 
 * **Node.js 16+** (recomendado 18 ou 20)
-* **npm**
-* **Biblioteca readline-sync**
+* **Npm**
+* **Docker**
+* **Visual Studio Code**
+* **PgAdmin4**
+* **Bibliotecas pg, express, dotenv**
 
 <br>
 
@@ -76,7 +72,7 @@ backend/
 Na **raiz** do projeto (onde está o `package.json`):
 
 ```bash
-npm i -D typescript ts-node @types/node
+npm install --save-dev @types/express @types/pg @types/dotenv
 ```
 
 Crie (ou confira) os scripts no **package.json**:
