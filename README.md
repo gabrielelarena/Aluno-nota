@@ -44,8 +44,6 @@ Este projeto foi desenvolvido com as seguintes ferramentas:
 
 ```
 backend/
-├─ dist/          # arquivos .js gerados pelo TypeScript
-    ├─ routes # guarda o arquivo (após a transpilaçâo) que armazena a url de conexão.
 ├─ src/           # código-fonte .ts (ex.: ts/index.ts) e conexões do banco.
     ├─ routes # guarda o arquivo que armazena a url de conexão.
 ├─ node_modules/  # armazena as dependências externas
@@ -165,7 +163,7 @@ Seu arquivo deverá estar assim:
 
 ## ▶️ Como executar
 
-Transpilar e rodar o JS gerado:
+Para executar o arquivo em Type:
 
 ```bash
 npx ts-node src/index.ts
@@ -174,8 +172,8 @@ npx ts-node src/index.ts
 
 ## 🖥️ Uso 
 
-1. **Entrada** → informe **Nome**, **CPF**, **Telefone**, **Pizzas**, **Bebidas**, **Modo de Entrega**, **Forma de Pagamento** e **Endereço**. O sistema grava em `cadastro.csv`.
-2. **Saída** → O Sistema calcula o preço dos produtos escolhidos e cria a nota fiscal do pedido. O sistema grava em `pedidos.csv`.
+1. **Entrada** → informe **Nome**, **Idade**, **Série** e **8 notas de cada matéria**.
+2. **Saída** → O Sistema calcula as médias (nota1 + nota2 + nota3 + nota4 + nota5 + nota6 + nota7 + nota8) / 8) e cria a tabela com as informações inseridas + calculo da média.
 
 <br>
 
