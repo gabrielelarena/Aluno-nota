@@ -72,17 +72,55 @@ backend/
 Na **raiz** do projeto (onde está o `package.json`):
 
 ```bash
-npm install --save-dev @types/express @types/pg @types/dotenv
+npm i -D typescript ts-node @types/node
 ```
 
 Crie (ou confira) os scripts no **package.json**:
 
 ```json
 {
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
   "scripts": {
-    "build": "tsc",
-    "start": "node dist/index.js",
-    "dev": "ts-node src/index.ts"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+}
+```
+
+Após isso, instale as bibliotecas:
+
+```bash
+npm install --save-dev @types/express @types/pg @types/dotenv
+```
+
+Seu arquivo deverá estar assim: 
+
+```json
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/dotenv": "^6.1.1",
+    "@types/express": "^5.0.4",
+    "@types/node": "^24.9.1",
+    "@types/pg": "^8.15.5",
+    "node-dev": "^8.0.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "pg": "^8.16.3"
   }
 }
 ```
@@ -92,39 +130,32 @@ Crie (ou confira) os scripts no **package.json**:
 ```json
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "CommonJS",
-    "moduleResolution": "node",
+    // Caminhos dos arquivos
     "rootDir": "./src",
     "outDir": "./dist",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "types": ["node"],
-    "lib": ["ES2020"]
-  },
-  "include": ["src/**/*"]
-}
-```
 
-Após isso, instale a biblioteca readline-sync:
-
-```bash
-npm install readline-sync
-```
-
-No tsconfig.json, garanta que tenha algo assim:
-
-``` bash
-{
-  "compilerOptions": {
+    // Ambiente Node.js
     "target": "ES2020",
-    "module": "CommonJS",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "types": ["node"],
+
+    // Saídas e mapas
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    // Regras de tipagem
     "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Compatibilidade e performance
     "esModuleInterop": true,
-    "outDir": "./dist"
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
   },
-  "include": ["./src"]
+  "include": ["src", "src/index.ts"]
 }
 ```
 
@@ -134,16 +165,10 @@ No tsconfig.json, garanta que tenha algo assim:
 
 ## ▶️ Como executar
 
-Modo desenvolvimento (executa direto o TypeScript):
-
-```bash
-npm run dev
-```
-
 Transpilar e rodar o JS gerado:
 
 ```bash
-npm run build && npm start
+npx ts-node src/index.ts
 ```
 
 
